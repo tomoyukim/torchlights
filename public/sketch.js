@@ -3,8 +3,6 @@ var socket = io();
 
 /// socket
 socket.on('connected', function(data) {
-    console.log('connected: '+ data.userid);
-    
     var users = data.existedUsers;
     for( var i=0; i < users.length; i++){
 	ps.push(new ParticleSystem(users[i].userid, color(users[i].r, users[i].g, users[i].b), users[i].size, true));
@@ -20,7 +18,6 @@ socket.on('connected', function(data) {
 });
 
 socket.on('login', function(data) {
-    console.log('login: '+ data.userid);
     ps.push(new ParticleSystem(data.userid, color(data.r, data.g, data.b), data.size));
 });
 
@@ -42,11 +39,8 @@ socket.on('clicked', function(data) {
 });
 
 socket.on('logout', function(data) {
-    console.log('logout: ' + data.userid);
-
     ps.forEach(function(element, index, array){
 	if(element.getId() == data.userid){
-	    console.log('user logout ('+ data.userid +')');
 	    array.splice(index, 1);
 	}
     });
