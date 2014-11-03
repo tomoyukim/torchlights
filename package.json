@@ -1,0 +1,18 @@
+{
+  "name": "torchlight",
+  "version": "0.1.2",
+  "description": "real-time collaborating particle system with multi-users",
+  "main": "index.js",
+  "author": "tomoyukim",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "express": "3.4.8",
+    "newrelic": "^1.13.0",
+    "socket.io": "1.2.0"
+  },
+  "engines": {
+    "node": "0.10.32",
+    "npm": "1.4.28"
+  }
+}
